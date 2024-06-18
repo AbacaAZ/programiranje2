@@ -138,7 +138,9 @@ int transactionsMenu() {
 			printf("Enter ID: ");
 			current = (LLTRANS*)printTransactions(findTransByID(readTransByID((const int)currAcc->ID)));
 			if (!current) {
+				system("cls");
 				printTransactionsMenu();
+				printf("No transactions found\n");
 			}
 			break;
 		case SEARCH_BY_NAME:
@@ -147,7 +149,9 @@ int transactionsMenu() {
 			printTransactionsMenu();
 			current = (LLTRANS*)printTransactions(findTransByName(readTransByID((const int)currAcc->ID)));
 			if (!current) {
+				system("cls");
 				printTransactionsMenu();
+				printf("No transactions found\n");
 			}
 			break;
 		case SORT:
